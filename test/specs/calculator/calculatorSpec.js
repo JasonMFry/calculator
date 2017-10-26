@@ -114,4 +114,24 @@ describe('calculator', () => {
 
     assert.equal(gv.responsePaneText, 12);
   });
+
+  it('should clear the tape after the user presses "="', () => {
+    gv.two.click();
+    gv.plus.click();
+    gv.four.click();
+    gv.equals.click();
+
+    gv.two.click();
+    gv.plus.click();
+    gv.three.click();
+    gv.times.click();
+    gv.four.click();
+    gv.dividedBy.click();
+    assert.equal(gv.responsePaneText, 12);
+
+    gv.six.click();
+    gv.equals.click();
+    assert.equal(gv.responsePaneText, 4);
+
+  });
 });
