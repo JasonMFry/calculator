@@ -3,14 +3,13 @@ const gv = require('./config.js');
 
 beforeAll(() => {
   browser.url('file:///Users/jason/Projects/calculator/index.html');
-})
+});
 
 afterEach(() => {
   browser.refresh();
-})
+});
 
 describe('calculator', () => {
-
   it('should do rational addition', () => {
     gv.two.click();
     gv.three.click();
@@ -21,7 +20,6 @@ describe('calculator', () => {
     gv.equals.click();
 
     assert.equal(gv.responsePaneText, '30.5');
-
   });
 
   it('should do chained operations', () => {
@@ -34,7 +32,6 @@ describe('calculator', () => {
     gv.equals.click();
 
     assert.equal(gv.responsePaneText, '-12');
-
   });
 
   it('should do chained and ordered operations', () => {
@@ -46,7 +43,6 @@ describe('calculator', () => {
     gv.equals.click();
 
     assert.equal(gv.responsePaneText, '26');
-
   });
 
   it('should display Undefined when dividing by zero', () => {
@@ -132,6 +128,5 @@ describe('calculator', () => {
     gv.six.click();
     gv.equals.click();
     assert.equal(gv.responsePaneText, 4);
-
   });
 });
