@@ -7,11 +7,11 @@ A rudimentary calculator, with a classic interface similar to those found in man
 <img src='ExampleUI.png'>
 
 Input to the calculator comes via mouse clicks to HTML elements.
-All input is echoed to the response pane, with results rendered on press of any (orange) operation button. Order of operations and chained operations (see  Testing, below) is be supported. Rational numbers are supported. 
+All input is echoed to the response pane, with results rendered on press of any (orange) operation button. Order of operations and chained operations (see Testing, below) is be supported. Rational numbers are supported.
 
 It will show an error on any division by zero or overflow beyond 10 digits.
 
-The other buttons (` AC `, ` ± ` and ` % `) are not supported for now. 
+The other buttons (` AC `, ` ± ` and ` % `) are not supported for now.
 
 ## Constraints
 Use only:
@@ -22,7 +22,7 @@ Use only:
 No 3rd party libraries or frameworks, implemented entirely in the native structures offered in the above standards.
 
 ## Testing
-Some example interactions with the calculator are provided below.
+Some example interactions with the calculator are provided below. To run the test suite, including some tests not listed below, first do `npm install`, then you should be able to do `npm test`.
 
 Example 1: Rational Addition Example
 
@@ -48,7 +48,7 @@ Example 2: Chained Operations
 | 7     	| 17          	|
 | =     	| -12         	|
 
-Example 3: Chained and Ordered 
+Example 3: Chained and Ordered
 
 | Input 	| Result Pane 	|
 |------:	|-------------	|
