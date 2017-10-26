@@ -1,16 +1,7 @@
 {
-  /**
-   * Represents the calculator tape
-   * @type {array}
-   */
   const tape = [];
 
   // TODO make AC functional, don't disable AC here, instruct user to press AC in validateNumber()
-  /**
-   * Disables buttons when some events occur
-   * returns nothing
-   * @type {function}
-   */
   const disableButtons = () => {
     const buttons = document.getElementsByTagName('button');
     for (const button of buttons) {
@@ -18,11 +9,6 @@
     }
   };
 
-  /**
-   * All validation functions live in here
-   * @type {object}
-   * errors
-   */
   const validationHelpers = {
     errors: ['Error', 'Undefined'],
     validateNumber: (number) => {
