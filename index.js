@@ -3,7 +3,7 @@
 
   const disableButtons = () => {
     const buttonsExceptAC = document.querySelectorAll('button:not(#ac)');
-    for (const button of buttons) {
+    for (const button of buttonsExceptAC) {
       button.disabled = true;
     }
   };
