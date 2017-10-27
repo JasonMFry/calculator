@@ -115,8 +115,9 @@
         }
         // This accounts for scenario [N, a, N, m, N, a]
         if (addition.includes(thirdOperator)) {
-          math.doMath();
-          math.doMath();
+          while (tape.length > 2) {
+            math.doMath();
+          }
         }
       }
     },
