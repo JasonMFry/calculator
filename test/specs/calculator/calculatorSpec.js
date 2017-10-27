@@ -155,4 +155,27 @@ describe('calculator', () => {
     gv.dividedBy.click();
     assert.equal(gv.responsePaneText, 12);
   });
+
+  it('should handle redundant operation inputs', () => {
+    gv.two.click();
+    gv.dividedBy.click();
+    gv.times.click();
+    gv.minus.click();
+    gv.plus.click();
+
+    gv.three.click();
+    gv.dividedBy.click();
+    gv.times.click();
+
+    gv.four.click();
+    gv.times.click();
+    assert.equal(gv.responsePaneText, 12);
+
+    gv.minus.click();
+    assert.equal(gv.responsePaneText, 14);
+
+    gv.one.click();
+    gv.equals.click();
+    assert.equal(gv.responsePaneText, 13);
+  });
 });
