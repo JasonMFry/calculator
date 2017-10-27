@@ -1,13 +1,19 @@
 {
   let tape = [];
 
-  // TODO make AC functional, don't disable AC here, instruct user to press AC in validateNumber()
   const disableButtons = () => {
-    const buttons = document.getElementsByTagName('button');
+    const buttonsExceptAC = document.querySelectorAll('button:not(#ac)');
     for (const button of buttons) {
       button.disabled = true;
     }
   };
+
+  const enableButtons = () => {
+    const buttons = document.getElementsByTagName('button');
+    for (const button of buttons) {
+      button.disabled = false;
+    }
+  }
 
   const validationHelpers = {
     errors: ['Error', 'Undefined'],
@@ -116,6 +122,15 @@
     },
   };
 
+  const addACListener = (acButton, responsePane) => {
+    acButton.addEventListener('click', (e) => {
+      tape = [];
+      responsePane.removeAttribute('data-processed');
+      responsePane.innerText = 0;
+      enableButtons();
+    });
+  };
+
   const addDigitsListener = (digitButtons, responsePane) => {
     digitButtons.addEventListener('click', (e) => {
       const elemText = e.target.innerText;
@@ -150,8 +165,10 @@
     const responsePane = document.getElementById('response-pane');
     const operationButtons = document.getElementById('operation-buttons');
     const digitButtons = document.getElementById('digit-buttons');
+    const acButton = document.getElementById('ac');
     addDigitsListener(digitButtons, responsePane);
     addOperationsListener(operationButtons, responsePane);
+    addACListener(acButton, responsePane);
   };
 
   document.addEventListener('DOMContentLoaded', addEventsToButtons());

@@ -85,6 +85,6 @@ button:focus {
 .digits {
   background-color: #E0E0E0;
 }
-.digits:active {
+.digits:active, #ac:active {
   background-color: #9e9e9e
 }
