@@ -2,7 +2,7 @@ const assert = require('assert');
 const gv = require('./config.js');
 
 beforeAll(() => {
-  browser.url('file:///Users/jason/Projects/calculator/index.html');
+  browser.url(`file://${process.env.PWD}/app/index.html`);
 });
 
 afterEach(() => {
