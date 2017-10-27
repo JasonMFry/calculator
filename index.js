@@ -1,5 +1,5 @@
 {
-  const tape = [];
+  let tape = [];
 
   // TODO make AC functional, don't disable AC here, instruct user to press AC in validateNumber()
   const disableButtons = () => {
@@ -14,9 +14,11 @@
     validateNumber: (number) => {
       if (number.toPrecision().length > 10) {
         disableButtons();
+        tape = ['='];
         return validationHelpers.errors[0];
       } else if (number === Infinity) {
         disableButtons();
+        tape = ['='];
         return validationHelpers.errors[1];
       }
       return number;
