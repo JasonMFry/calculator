@@ -129,4 +129,30 @@ describe('calculator', () => {
     gv.equals.click();
     assert.equal(gv.responsePaneText, 4);
   });
+
+  it('should display "Error" instead of irrational number', () => {
+    gv.two.click();
+    gv.dividedBy.click();
+    gv.three.click();
+    gv.equals.click();
+
+    assert.equal(gv.responsePaneText, 'Error');
+  });
+
+  it('should reset the calculator when pressing "AC" and allow more input', () => {
+    gv.two.click();
+    gv.dividedBy.click();
+    gv.three.click();
+    gv.equals.click();
+    gv.ac.click();
+    assert.equal(gv.responsePaneText, 0);
+
+    gv.two.click();
+    gv.plus.click();
+    gv.three.click();
+    gv.times.click();
+    gv.four.click();
+    gv.dividedBy.click();
+    assert.equal(gv.responsePaneText, 12);
+  });
 });

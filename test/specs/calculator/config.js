@@ -17,5 +17,7 @@ module.exports = {
   get plus() { return browser.element('button=+'); },
   get equals() { return browser.element('button=='); },
 
+  get ac() { return browser.element('button=AC'); },
+
   get responsePaneText() { return browser.getText('#response-pane'); },
 };
